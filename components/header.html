@@ -1,0 +1,49 @@
+<header class="site-header">
+  <div class="container header-row">
+    <a href="{{base}}index.html" class="brand">
+      <span class="brand-badge">NZB</span>
+      <span class="brand-text">
+        <strong>Nzenda Business</strong>
+        <small>Produits naturels et agricoles</small>
+      </span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-navigation"
+      aria-label="Ouvrir le menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="{{base}}index.html" data-nav="home">Accueil</a>
+      <a href="{{base}}pages/products.html" data-nav="products">Produits</a>
+      <a href="{{base}}pages/about.html" data-nav="about">À propos</a>
+      <a href="{{base}}pages/contact.html" data-nav="contact">Contact</a>
+    </nav>
+
+    <a href="{{base}}pages/order.html" class="btn btn-outline" data-nav="order"
+      >Commander</a
+    >
+  </div>
+
+  <div class="container mobile-nav-shell">
+    <nav class="mobile-nav" id="site-navigation" aria-label="Navigation mobile">
+      <a href="{{base}}index.html" data-nav="home">Accueil</a>
+      <a href="{{base}}pages/products.html" data-nav="products">Produits</a>
+      <a href="{{base}}pages/about.html" data-nav="about">À propos</a>
+      <a href="{{base}}pages/contact.html" data-nav="contact">Contact</a>
+      <a
+        href="{{base}}pages/order.html"
+        class="btn btn-outline"
+        data-nav="order"
+        >Commander</a
+      >
+    </nav>
+  </div>
+</header>

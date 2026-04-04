@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nzenda Business | Commander</title>
+    <meta
+      name="description"
+      content="Passez une commande de pâte d'arachide, caramel d'arachide ou produits agricoles avec Nzenda Business."
+    />
+    <link rel="stylesheet" href="../style/style.css" />
+  </head>
+  <body data-base-path="../" data-page="order">
+    <div data-include="../components/header.html"></div>
+
+    <main>
+      <section class="page-hero">
+        <div class="container narrow">
+          <p class="eyebrow">Commande</p>
+          <h1>Faites votre commande en quelques informations.</h1>
+          <p class="lead-text">
+            Cette page permet d'organiser les demandes de manière claire pour
+            les clients, les revendeurs et les partenaires.
+          </p>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="container order-grid">
+          <form class="contact-form">
+            <div class="field-grid">
+              <label>
+                <span>Nom complet</span>
+                <input type="text" placeholder="Votre nom" />
+              </label>
+              <label>
+                <span>Téléphone</span>
+                <input type="text" placeholder="Votre numéro" />
+              </label>
+            </div>
+
+            <div class="field-grid">
+              <label>
+                <span>Produit</span>
+                <select>
+                  <option>Pâte d'arachide</option>
+                  <option>Caramel d'arachide</option>
+                  <option>Produits agricoles</option>
+                </select>
+              </label>
+              <label>
+                <span>Quantité</span>
+                <input type="text" placeholder="Ex: 10 pots ou 25 kg" />
+              </label>
+            </div>
+
+            <label>
+              <span>Détails complémentaires</span>
+              <textarea rows="6" placeholder="Précisez votre besoin"></textarea>
+            </label>
+
+            <button type="submit" class="btn btn-primary">
+              Envoyer la commande
+            </button>
+          </form>
+
+          <aside class="info-list">
+            <article>
+              <h3>Commande simple</h3>
+              <p>
+                Envoyez les détails essentiels et l'entreprise vous recontacte
+                rapidement.
+              </p>
+            </article>
+            <article>
+              <h3>Commande en gros</h3>
+              <p>
+                Indiquez la quantité souhaitée pour une discussion commerciale
+                adaptée.
+              </p>
+            </article>
+            <article>
+              <h3>Suivi professionnel</h3>
+              <p>
+                Une présentation claire renforce la confiance et la qualité du
+                service.
+              </p>
+            </article>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <div data-include="../components/footer.html"></div>
+
+    <script src="../logic/script.js"></script>
+  </body>
+</html>
