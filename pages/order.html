@@ -8,6 +8,8 @@
       name="description"
       content="Passez une commande de pâte d'arachide, caramel d'arachide ou produits agricoles avec Nzenda Business."
     />
+        <link rel="icon" type="image/x-icon" href="../assets/pate3.jpeg"/>
+
     <link rel="stylesheet" href="../style/style.css" />
   </head>
   <body data-base-path="../" data-page="order">
@@ -27,22 +29,23 @@
 
       <section class="page-section">
         <div class="container order-grid">
-          <form class="contact-form">
+          <form class="contact-form" id="form_commande">
             <div class="field-grid">
+               <input type="text" id="verify_bot" name="verify_bot" style="display:none" tabindex="-1" autocomplete="off">
               <label>
                 <span>Nom complet</span>
-                <input type="text" placeholder="Votre nom" />
+                <input type="text" name="Name" placeholder="Votre nom" required />
               </label>
               <label>
                 <span>Téléphone</span>
-                <input type="text" placeholder="Votre numéro" />
+                <input type="text" name="Phone" placeholder" ="Votre numéro" require d />
               </label>
             </div>
 
             <div class="field-grid">
               <label>
                 <span>Produit</span>
-                <select>
+                <select name="Type">
                   <option>Pâte d'arachide</option>
                   <option>Caramel d'arachide</option>
                   <option>Produits agricoles</option>
@@ -50,13 +53,13 @@
               </label>
               <label>
                 <span>Quantité</span>
-                <input type="text" placeholder="Ex: 10 pots ou 25 kg" />
+                <input type="text" name="Quantity" placeholder="Ex: 10 pots ou 25 kg" required/>
               </label>
             </div>
 
             <label>
               <span>Détails complémentaires</span>
-              <textarea rows="6" placeholder="Précisez votre besoin"></textarea>
+              <textarea rows="6" name="Details" placeholder="Précisez votre besoin" required></textarea>
             </label>
 
             <button type="submit" class="btn btn-primary">

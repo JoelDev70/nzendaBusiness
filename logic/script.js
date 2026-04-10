@@ -84,6 +84,12 @@ function setupMobileNavigation() {
   closeMenu();
 }
 
+// gestion du pannel
+// const product_card = document.querySelector(".product-card");
+// product_card.addEventListener("click",()=>{
+  
+// })
+
 function setupScrollAnimations() {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const revealTargets = document.querySelectorAll(
@@ -209,47 +215,47 @@ function setupBackToTopButton() {
 }
 
 function setupFormEnhancements() {
-  const forms = document.querySelectorAll(".contact-form");
+   const forms = document.querySelectorAll('.contact-form');
 
-  forms.forEach((form) => {
+forms.forEach((form) => {
     const submitButton = form.querySelector('button[type="submit"]');
-
     if (!submitButton) {
-      return;
+          return;
+        }
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+         // 1. Vérification du Honeypot
+    const botCheck = document.getElementById('verify_bot').value;
+    if (botCheck !== "") {
+        console.warn("Robot détecté !");
+        return; // On arrête tout ici
     }
+  
+        // 2. Déterminer le titre du message selon le formulaire
+        let titre = (this.id === 'form_commande') ? "*NOUVELLE COMMANDE NZB*" : "*NOUVEAU CONTACT NZB*";
+      let messageCorps = "";
+        // 3. Récupérer dynamiquement tous les champs remplis
+        const formData = new FormData(this);
 
-    let feedback = form.querySelector(".form-feedback");
+        for (const [key, value] of formData.entries()) {
+            // Formate chaque champ : "Nom : Jean-Paul"
+            messageCorps += `\n${key.toUpperCase()} : ${value}`;
+        }
+        // 4. Construire le lien WhatsApp final
+        const messageFinal = encodeURIComponent(`${titre}\n${messageCorps}`);
+        const suffixN = "243977"; 
+        const  prefixN= "973473"; 
+        const monNumero = suffixN + prefixN ; 
+        const urlWhatsApp = `https://wa.me/${monNumero}?text=${messageFinal}\n`;
+        console.log(messageCorps);
+                alert("Envoi du message en cours vers WhatsApp...");
+        // 5. Ouvrir l'application WhatsApp
+        window.open(urlWhatsApp, '_blank');
+        document.querySelector("form").reset();
 
-    if (!feedback) {
-      feedback = document.createElement("p");
-      feedback.className = "form-feedback";
-      feedback.setAttribute("aria-live", "polite");
-      form.appendChild(feedback);
-    }
-
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      submitButton.disabled = true;
-      submitButton.classList.add("is-loading");
-      submitButton.dataset.originalLabel = submitButton.dataset.originalLabel || submitButton.textContent.trim();
-      submitButton.textContent = "Envoi en cours...";
-
-      feedback.textContent = "Traitement de votre demande...";
-      feedback.classList.remove("is-success");
-
-      window.setTimeout(() => {
-        submitButton.disabled = false;
-        submitButton.classList.remove("is-loading");
-        submitButton.textContent = submitButton.dataset.originalLabel;
-
-        feedback.textContent = "Votre demande a bien été enregistrée. Nous vous recontacterons rapidement.";
-        feedback.classList.add("is-success");
-
-        form.reset();
-      }, 1100);
     });
-  });
+});
 }
 
 document.addEventListener("DOMContentLoaded", async () => {

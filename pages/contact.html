@@ -8,6 +8,8 @@
       name="description"
       content="Contactez Nzenda Business pour obtenir des informations sur les produits et les commandes."
     />
+    <link rel="icon" type="image/x-icon" href="../assets/pate3.jpeg" />
+
     <link rel="stylesheet" href="../style/style.css" />
   </head>
   <body data-base-path="../" data-page="contact">
@@ -32,7 +34,8 @@
           <div class="info-list">
             <article>
               <h3>Téléphone</h3>
-              <p><a href="tel:+243977973473">+243977973473</a></p>
+
+              <p><a href="#">+243977973473</a></p>
             </article>
             <article>
               <h3>Email</h3>
@@ -48,26 +51,54 @@
             </article>
           </div>
 
-          <form class="contact-form">
+          <form class="contact-form" id="form_contact">
             <div class="field-grid">
+              <input
+                type="text"
+                id="verify_bot"
+                name="verify_bot"
+                style="display: none"
+                tabindex="-1"
+                autocomplete="off"
+              />
               <label>
                 <span>Nom complet</span>
-                <input type="text" placeholder="Votre nom" />
+                <input
+                  type="text"
+                  name="nom"
+                  placeholder="Votre nom"
+                  required
+                />
               </label>
               <label>
                 <span>Téléphone</span>
-                <input type="text" placeholder="Votre numéro" />
+                <input
+                  type="text"
+                  name="telephone"
+                  placeholder="Votre numéro"
+                  required
+                />
               </label>
             </div>
 
             <label>
               <span>Email</span>
-              <input type="email" placeholder="Votre email" />
+              <input
+                type="email"
+                name="email"
+                placeholder="Votre email"
+                required
+              />
             </label>
 
             <label>
               <span>Message</span>
-              <textarea rows="6" placeholder="Écrivez votre message"></textarea>
+              <textarea
+                rows="6"
+                name="message"
+                placeholder="Écrivez votre message"
+                required
+              ></textarea>
             </label>
 
             <button type="submit" class="btn btn-primary">
