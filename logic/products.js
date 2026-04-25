@@ -1,13 +1,13 @@
 const products = [
   {
     image: "assets/nzP1.jpeg",
-    title: "Pâte d'arachide naturelle",
+    title: "Lotoba Kanga Journée",
     description: "Une pâte onctueuse, adaptée à la cuisine familiale et à la vente régulière.",
     price: "Prix 10 $",
     tag: "Produit phare"
   },
   {
-    image: "assets/nzP2.jpeg",
+    image: "assets/caramel1.jpeg",
     title: "Caramel d'arachide",
     description: "Une douceur croquante qui met en valeur le goût authentique de l'arachide.",
     price: "Prix 8 $",
