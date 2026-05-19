@@ -872,6 +872,14 @@ main {
 .footer-brand {
   margin-bottom: 1rem;
 }
+.brand-badge img{
+  border-radius: 15px;
+  scale: 1.1;
+  box-shadow: 2px 2px rgba(18, 10, 7, 0.1);}
+.brand-badge img:hover{
+  scale: 1.5;
+  transition: 1s ease-in-out;
+}
 
 .footer-copy {
   max-width: 50ch;
